@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d18">
+<title>Our Little Forever ✦</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+  :root{--night:#100d18;--panel:#1b1525;--pink:#ff83b7;--lilac:#c9a7ff;--cream:#fff3e9;--muted:#b9adca;--line:#ffffff1c}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;color:var(--cream);font-family:"DM Sans",sans-serif;background:
+    radial-gradient(ellipse at 12% 12%,#48204b66,transparent 38%),
+    radial-gradient(ellipse at 90% 80%,#202b5966,transparent 35%),var(--night);
+    display:flex;align-items:center;justify-content:center;padding:28px 16px;overflow-x:hidden}
+  .stars{position:fixed;inset:0;pointer-events:none;opacity:.6;background-image:radial-gradient(#fff 1px,transparent 1.5px);background-size:71px 83px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+  .decor{position:fixed;pointer-events:none;user-select:none;filter:drop-shadow(0 7px 18px #0005)}
+  .ghost{font-size:clamp(2rem,5vw,4rem);animation:float 4s ease-in-out infinite}
+  .ghost.g1{top:8%;left:7%}.ghost.g2{right:8%;bottom:9%;animation-delay:-2s;font-size:3rem}
+  .balloon{font-size:clamp(2rem,4vw,3.4rem);animation:float 5s ease-in-out infinite}
+  .balloon.b1{top:15%;right:15%}.balloon.b2{bottom:12%;left:12%;animation-delay:-2.5s}
+  @keyframes float{50%{transform:translateY(-13px) rotate(5deg)}}
+  .shell{width:min(100%,600px);position:relative;z-index:1}
+  .topline{display:flex;justify-content:space-between;align-items:center;margin:0 4px 14px;color:var(--muted);font:11px "DM Mono",monospace;letter-spacing:.16em;text-transform:uppercase}
+  .live-dot{display:inline-block;width:7px;height:7px;background:#a8ffce;border-radius:50%;margin-right:7px;box-shadow:0 0 12px #a8ffce}
+  .card{position:relative;min-height:460px;border:1px solid #ffffff25;border-radius:28px;overflow:hidden;
+    background:linear-gradient(145deg,#24192fef,#15121ff5);box-shadow:0 25px 90px #0008,inset 0 1px #ffffff10}
+  .card:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 90% 0%,#ff83b718,transparent 34%)}
+  .side{display:none;min-height:460px;padding:clamp(25px,6vw,44px);position:relative;animation:appear .35s ease}
+  .side.active{display:flex;flex-direction:column}
+  @keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .eyebrow{font:11px "DM Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin-bottom:22px}
+  h1,h2{font-family:"Playfair Display",serif;line-height:1.08;margin:0 0 18px;letter-spacing:-.03em}
+  h1{font-size:clamp(2.7rem,8vw,4.8rem)}h2{font-size:clamp(2.2rem,6vw,3.5rem)}
+  .script{color:var(--pink);font-style:italic}
+  p{color:#d5cbdc;line-height:1.75;font-size:15px;max-width:44ch}
+  .sticker-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:28px}
+  .sticker{border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-size:12px;color:#e5d8ef;background:#ffffff06}
+  .link-card{margin-top:15px;padding:20px;border:1px solid #ffffff24;background:#ffffff07;border-radius:18px}
+  .link-card .link-icon{font-size:28px}
+  .link-card a{color:var(--cream);text-decoration:none;font-weight:700;display:block;margin:10px 0 4px;overflow-wrap:anywhere}
+  .link-card a:hover{color:var(--pink)}
+  .photo-frame{width:100%;height:250px;border-radius:20px;border:1px solid #ffffff28;background:linear-gradient(135deg,#39213c,#171927);overflow:hidden;display:grid;place-items:center;position:relative;margin:4px 0 12px}
+  .photo-frame img{width:100%;height:100%;object-fit:cover;display:none}
+  .photo-placeholder{text-align:center;padding:20px;color:#e7d8f4}
+  .photo-placeholder b{display:block;font-size:42px;margin-bottom:8px}
+  .upload{display:inline-flex;align-items:center;gap:8px;cursor:pointer;color:var(--cream);background:#ffffff10;border:1px solid #ffffff25;padding:10px 14px;border-radius:12px;font-size:12px}
+  .upload:hover,.nav button:hover{background:#ffffff18;transform:translateY(-1px)}
+  input[type=file]{display:none}
+  .big-heart{font-size:62px;line-height:1;margin:10px 0 18px;filter:drop-shadow(0 0 22px #ff83b744);animation:heartbeat 2.3s ease-in-out infinite}
+  @keyframes heartbeat{10%,30%{transform:scale(1.08)}20%,40%{transform:scale(1)}}
+  .signature{font-family:"Playfair Display",serif;font-style:italic;font-size:22px;color:var(--pink);margin-top:18px}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
+  .nav button{border:1px solid #ffffff25;border-radius:13px;background:#ffffff0b;color:var(--cream);padding:12px 16px;cursor:pointer;font:500 13px "DM Sans",sans-serif;transition:.2s}
+  .nav .next{background:var(--pink);color:#241321;border-color:transparent;font-weight:700}
+  .nav .next:hover{background:#ffa6cd}
+  .dots{display:flex;gap:7px;align-items:center}
+  .dot{width:7px;height:7px;border:0;padding:0;border-radius:20px;background:#ffffff3a;cursor:pointer;transition:.2s}
+  .dot.active{width:22px;background:var(--pink)}
+  .hint{text-align:center;color:#91859f;font:10px "DM Mono",monospace;letter-spacing:.1em;margin-top:16px}
+  .rose{position:absolute;right:25px;top:20px;font-size:38px;transform:rotate(12deg)}
+  .tiny-note{font-size:11px;color:#9d91ad}
+  @media(max-width:440px){.side,.card{min-height:500px}.side{padding:27px 23px}.photo-frame{height:220px}.ghost.g1{left:2%}.balloon.b1{right:3%}}
+  @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="decor ghost g1" aria-hidden="true">👻</div><div class="decor ghost g2" aria-hidden="true">👻</div>
+<div class="decor balloon b1" aria-hidden="true">🎈</div><div class="decor balloon b2" aria-hidden="true">🖤</div>
+<main class="shell">
+  <div class="topline"><span><i class="live-dot"></i>love.exe is running</span><span>VOL. ∞ · EST. US</span></div>
+  <section class="card" aria-label="Interactive anniversary card">
+    <article class="side active" data-side="0">
+      <div class="rose" aria-hidden="true">🥀</div>
+      <div class="eyebrow">01 / a tiny love letter</div>
+      <h1>Always my<br><span class="script">favorite</span><br>8/∞</h1>
+      <p>Happy anniversary, my love. Somehow, in this enormous, weird world, we found each other . And I would choose you again and again— even if you were a little ghost haunting my kitchen at 3 a.m. (I would check my weed quality first though)</p>
+      <div class="sticker-row"><span class="sticker">🖤 forever and ever</span><span class="sticker">👻 spooky soulmates</span><span class="sticker">🌹 no refunds</span></div>
+    </article>
+    <article class="side" data-side="1">
+      <div class="eyebrow">02 / our little corner of the internet</div>
+      <h2>A door to<br><span class="script">our world.</span></h2>
+      <p>We always spoke in music, so a little love for what we have built, 454 songs and growing; like <em>us</em>.</p>
+      <div class="link-card">
+        <div class="link-icon">🔗 🦇</div>
+        <a id="memoryLink" href="https://www.youtube.com/watch?v=eAVwp7rg4m8&list=PL8oq4J4_iT3ymCxrmQ27EdqTFa5gQ1_U8" target="_blank" rel="noopener noreferrer">Open our little universe ↗</a>
+        <div class="tiny-note" id="linkCaption">Replace this with your special link.</div>
+      </div>
+      <p class="tiny-note">I wonder if we could <code>break</code>, YouTube one day.</p>
+      <div class="sticker-row"><span class="sticker">🔐 just us</span><span class="sticker">🕸️ memories inside</span></div>
+    </article>
+    <article class="side" data-side="2">
+      <div class="eyebrow">03 / proof we're adorable</div>
+      <h2>Our kind of<br><span class="script">magic.</span></h2>
+      <div class="photo-frame">
+  <img
+    id="photo"
+    src="photobooth.jpg"
+    alt="Our anniversary photobooth pictures"
+    style="display:block;"
+  >
+</div>
+
+      <div class="sticker-row"><span class="sticker">🖤 cute but creepy</span><span class="sticker">📷 certified keepers</span></div>
+    </article>
+    <article class="side" data-side="3">
+      <div class="eyebrow">04 / one more thing</div>
+      <div class="big-heart" aria-hidden="true">🖤</div>
+      <h2>My favorite<br><span class="script">plot twist</span><br>was you.</h2>
+      <p>Life isn't always a perfect little movie. Sometimes it's chaos, bad timing, and us being dramatic for absolutely no reason. But you will always the person I want beside me for the plot. We DO need to say "I love you" more; we only said it 26,896 times so far</p>
+      <p>Here's to more laughs, more weird little traditions, and a love story with absolutely insane ghosts but excellent inappropriate humor.</p>
+      <div class="signature">Always yours. David🖤</div>
+      <div class="sticker-row"><span class="sticker">🦇 till the end credits and beyond</span><span class="sticker">👻 boo, I love you</span></div>
+    </article>
+  </section>
+  <nav class="nav" aria-label="Card navigation">
+    <button id="prev" type="button">← Back</button>
+    <div class="dots" aria-label="Choose a card side">
+      <button class="dot active" data-go="0" aria-label="Go to side 1"></button>
+      <button class="dot" data-go="1" aria-label="Go to side 2"></button>
+      <button class="dot" data-go="2" aria-label="Go to side 3"></button>
+      <button class="dot" data-go="3" aria-label="Go to side 4"></button>
+    </div>
+    <button id="next" class="next" type="button">Next side →</button>
+  </nav>
+  <div class="hint">TAP THROUGH THE SIDES · MADE WITH A LITTLE EXTRA LOVE</div>
+</main>
+<script>
+  const sides = [...document.querySelectorAll('.side')];
+  const dots = [...document.querySelectorAll('.dot')];
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  let current = 0;
+  function showSide(index) {
+    current = (index + sides.length) % sides.length;
+    sides.forEach((side, i) => side.classList.toggle('active', i === current));
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === current);
+      dot.setAttribute('aria-current', i === current ? 'step' : 'false');
+    });
+    prev.textContent = current === 0 ? '↶ Start again' : '← Back';
+    next.textContent = current === sides.length - 1 ? 'Read again ↻' : 'Next side →';
+  }
+  prev.addEventListener('click', () => showSide(current - 1));
+  next.addEventListener('click', () => showSide(current + 1));
+  dots.forEach(dot => dot.addEventListener('click', () => showSide(Number(dot.dataset.go))));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') showSide(current + 1);
+    if (e.key === 'ArrowLeft') showSide(current - 1);
+  });
+</script>
+</body>
+</html>
